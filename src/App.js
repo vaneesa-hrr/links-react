@@ -9,7 +9,7 @@ function App() {
       <Route path="/" element={<Create />} />
       <Route path="u/:id" element={<Redirect />} />
     </Routes>
-  </BrowserRouter >;
+  </BrowserRouter >
 }
 
 export default App;

@@ -9,6 +9,7 @@ export function reducer(state, action) {
       return load(state, action);
     case 'LOAD_VIEW':
       return addView(state, action);
+
     default:
   }
 }
