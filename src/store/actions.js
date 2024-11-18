@@ -38,8 +38,12 @@ export function load(state, action) {
 }
 
 export function addView(state, action) {
-  const temp = [...state.items];
-  const item = temp.find(i => i.shortUrl === action.data);
-  item.views++;
-  localStorage.setItem("shortenedUrls", JSON.stringify(item));
+  const data = localStorage.getItem("shortenedUrls");
+  if (data) {
+    const items = JSON.parse(data);
+    const item = items.find(i => i.shortUrl === action.data);
+    item.views++;
+    localStorage.setItem("shortenedUrls", JSON.stringify(items));
+    return { items: [...items] };
+  }
 }

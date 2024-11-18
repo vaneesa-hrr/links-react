@@ -7,7 +7,7 @@ export function reducer(state, action) {
       return add(state, action);
     case 'LOAD':
       return load(state, action);
-    case 'LOAD_VIEW':
+    case 'ADD_VIEW':
       return addView(state, action);
 
     default:

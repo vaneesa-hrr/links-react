@@ -9,6 +9,7 @@ export default function Create() {
 
   useEffect(() => {
     dispatch({ type: "LOAD" });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -18,7 +19,9 @@ export default function Create() {
       <div>
         {state.items.map((item) => (
           <div key={item.shortUrl}>
-            {item.shortUrl} {item.url}
+            <div>{item.shortUrl}</div>
+            <div>{item.url}</div>
+            <div>{item.views}</div>
           </div>  /* Usar una propiedad única como key */
         ))}
       </div>
