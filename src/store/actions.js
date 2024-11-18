@@ -9,20 +9,37 @@ function getRandomURL() {
 export function add(state, action) {
   const url = action.data;
   const shortUrl = getRandomURL();
-  const temp = [...state.items];
+
   const newItem = {
     url: url.toString(),
     shortUrl: shortUrl,
     views: 0,
-  }
-  temp.unshift(newItem);
-  return { items: [...temp] };
+  };
+
+  // Agregar al estado y guardar en localStorage
+  const updateItems = [newItem, ...state.items];
+  localStorage.setItem("shortenedUrls", JSON.stringify(updateItems));
+
+  return { items: updateItems };
 }
 
 export function load(state, action) {
+  const data = localStorage.getItem("shortenedUrls");
+
+  if (data) {
+    const temp = JSON.parse(data);
+    return {
+      items: [...temp]
+    };
+  }
+  // Si no hay datos, retorna el estado inicial
+  return { items: [] };
 
 }
 
 export function addView(state, action) {
-
+  const temp = [...state.items];
+  const item = temp.find(i => i.shortUrl === action.data);
+  item.views++;
+  localStorage.setItem("shortenedUrls", JSON.stringify(item));
 }
