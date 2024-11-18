@@ -37,5 +37,5 @@ export default function Redirect() {
   }, [dispatch, params.id]);
 
 
-  return <Loader item={item} url={params.id} />;
+  return <Loader item={item} id={params.id} />;
 }
