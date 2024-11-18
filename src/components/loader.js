@@ -1,3 +1,5 @@
+import style from "./styles.module.css";
+
 export default function Loader({ item, id }) {
   if (item === null) {
     return <Container>Loading...</Container>;
@@ -6,9 +8,9 @@ export default function Loader({ item, id }) {
   if (item === undefined) {
     return <Container>Url not found {id}</Container>;
   }
-  return <Container>Redirect {item.url}</Container>;
+  return <Container>Redirecting to {item.url}...</Container>;
 }
 
 function Container({ children }) {
-  return <div>{children}</div>;
+  return <div className={style.loaderContainer}>{children}</div>;
 }
