@@ -1,0 +1,40 @@
+.mainContainer {
+  width: 500px;
+  margin: 100px auto;
+  background-color: white;
+  padding: 10px;
+}
+
+.input {
+  border: solid 1px #222;
+  border-radius: 3px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.itemsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.itemInfoContainer {
+  display: flex;
+}
+
+.itemInfoContainer a {
+  color: blue;
+  text-decoration: none;
+}
+
+.itemInfoTag {
+  min-width: 100px;
+  color: #696969;
+}

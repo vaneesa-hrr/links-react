@@ -6,7 +6,7 @@ import Loader from "../components/loader";
 export default function Redirect() {
   const params = useParams();
   const [item, setItem] = useState(null); // Inicializar como null
-  const [state, dispatch] = useReducerApp();
+  const [, dispatch] = useReducerApp();
 
   useEffect(() => {
     const data = localStorage.getItem("shortenedUrls");

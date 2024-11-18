@@ -3,6 +3,8 @@ import CreateForm from "../components/createForm";
 import MainContainer from "../components/mainContainer";
 
 import useReducerApp from "../store/store";
+import ItemsContainer from "../components/itemsContainer";
+import Item from "../components/item";
 
 export default function Create() {
   const [state, dispatch] = useReducerApp();
@@ -16,15 +18,11 @@ export default function Create() {
     <MainContainer>
       <CreateForm dispatch={dispatch} /> {/* Pasa dispatch como prop */}
 
-      <div>
+      <ItemsContainer>
         {state.items.map((item) => (
-          <div key={item.shortUrl}>
-            <div>{item.shortUrl}</div>
-            <div>{item.url}</div>
-            <div>{item.views}</div>
-          </div>  /* Usar una propiedad única como key */
+          <Item item={item} key={item.shortUrl} />
         ))}
-      </div>
+      </ItemsContainer>
 
     </MainContainer>
   );

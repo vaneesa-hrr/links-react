@@ -1,3 +1,5 @@
+import style from "./styles.module.css";
+
 import { useState } from "react";
 
 export default function CreateForm({ dispatch }) {
@@ -35,9 +37,9 @@ export default function CreateForm({ dispatch }) {
         value={url}
         onChange={handleChange}  // Actualiza el estado al cambiar el input
         onKeyDown={handleKeyDown} // Detecta la tecla presionada
-        placeholder="Enter URL"
+        placeholder="Type a valid URL..."
+        className={style.input}
       />
-      <button >Create URL</button>
     </form>
   );
 }
